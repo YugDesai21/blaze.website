@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLAZE'26 - College Sports Club</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file for custom styles (gradient and glass-card) -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        /* Tailwind configuration remains here as it extends the color palette for use in HTML classes */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blaze-blue': '#0A1C4E',
+                        'blaze-red': '#4E0A0A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="overflow-x-hidden"> <!-- Prevent horizontal scroll on mobile -->
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-black bg-opacity-70 backdrop-blur-sm p-4 shadow-xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <!-- Logo -->
+            <a href="#home" class="h-8 md:h-10 transition duration-300 transform hover:scale-110">
+                <img src="Phoenix.png" alt="BLAZE'26 Phoenix Logo" class="h-full w-auto">
+            </a>
+            
+            <!-- Desktop Menu (Hidden on Mobile) -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#about" class="text-lg text-gray-300 hover:text-white transition duration-200">About</a>
+                <a href="#sponsors" class="text-lg text-gray-300 hover:text-white transition duration-200">Sponsors</a>
+                <a href="#gallery" class="text-lg text-gray-300 hover:text-white transition duration-200">Gallery</a>
+                
+                <!-- Desktop Contact Dropdown Wrapper -->
+                <div class="relative">
+                    <button id="contact-toggle-desktop" class="text-lg text-gray-300 hover:text-white transition duration-200 focus:outline-none flex items-center gap-2">
+                        Contact Us
+                        <svg class="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    
+                    <!-- Desktop Dropdown Grid -->
+                    <div id="contact-menu-desktop" class="hidden absolute right-0 mt-6 w-[90vw] md:w-[700px] max-w-[95vw] grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-xl transform transition-all duration-300 origin-top-right z-50">
+                        <!-- Contact Boxes (Inserted dynamically or static) -->
+                        <div class="bg-black bg-opacity-90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-2xl hover:border-red-500 transition duration-300 text-left">
+                            <p class="text-red-400 text-xs font-bold uppercase tracking-widest mb-1">PRESIDENT</p>
+                            <h3 class="text-white font-bold text-xl mb-1">UDITII MARWAH</h3>
+                            <p class="text-gray-300 text-sm flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 83602 48816</p>
+                        </div>
+                        <div class="bg-black bg-opacity-90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-2xl hover:border-red-500 transition duration-300 text-left">
+                            <p class="text-red-400 text-xs font-bold uppercase tracking-widest mb-1">BLAZE HoD</p>
+                            <h3 class="text-white font-bold text-xl mb-1">PURAB BORANA</h3>
+                            <p class="text-gray-300 text-sm flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 98336 42424</p>
+                        </div>
+                        <div class="bg-black bg-opacity-90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-2xl hover:border-red-500 transition duration-300 text-left">
+                            <p class="text-red-400 text-xs font-bold uppercase tracking-widest mb-1">VICE PRESIDENT</p>
+                            <h3 class="text-white font-bold text-xl mb-1">TEJVEER CHAHAL</h3>
+                            <p class="text-gray-300 text-sm flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 82919 95329</p>
+                        </div>
+                        <div class="bg-black bg-opacity-90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-2xl hover:border-red-500 transition duration-300 text-left">
+                            <p class="text-red-400 text-xs font-bold uppercase tracking-widest mb-1">VICE PRESIDENT</p>
+                            <h3 class="text-white font-bold text-xl mb-1">ARYAN LAKHANI</h3>
+                            <p class="text-gray-300 text-sm flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 87669 71067</p>
+                        </div>
+                        <div class="bg-black bg-opacity-90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-2xl hover:border-red-500 transition duration-300 text-left">
+                            <p class="text-red-400 text-xs font-bold uppercase tracking-widest mb-1">MARKETING & FINANCE HOD</p>
+                            <h3 class="text-white font-bold text-xl mb-1">DIVNEET SINGH</h3>
+                            <p class="text-gray-300 text-sm flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 98154 79955</p>
+                        </div>
+                        <div class="bg-black bg-opacity-90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-2xl hover:border-red-500 transition duration-300 text-left">
+                            <p class="text-red-400 text-xs font-bold uppercase tracking-widest mb-1">MARKETING & FINANCE HOD</p>
+                            <h3 class="text-white font-bold text-xl mb-1">VEDIKA LALL</h3>
+                            <p class="text-gray-300 text-sm flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 81143 11888</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-btn" class="text-white md:hidden focus:outline-none p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Full width drop down) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-black bg-opacity-95 backdrop-blur-xl border-t border-gray-800 shadow-2xl flex flex-col p-6 space-y-4">
+            <a href="#about" class="text-xl text-gray-300 hover:text-white block py-2 border-b border-gray-800">About</a>
+            <a href="#sponsors" class="text-xl text-gray-300 hover:text-white block py-2 border-b border-gray-800">Sponsors</a>
+            <a href="#gallery" class="text-xl text-gray-300 hover:text-white block py-2 border-b border-gray-800">Gallery</a>
+            
+            <!-- Mobile Contact Accordion -->
+            <div>
+                <button id="contact-toggle-mobile" class="w-full text-left text-xl text-gray-300 hover:text-white py-2 flex justify-between items-center focus:outline-none">
+                    Contact Us
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="contact-menu-mobile" class="hidden mt-4 grid grid-cols-1 gap-4">
+                    <!-- Same 6 boxes, stacked for mobile -->
+                     <div class="bg-black bg-opacity-70 p-4 rounded-lg border border-white/20">
+                        <p class="text-red-400 text-xs font-bold uppercase mb-1">x</p>
+                        <h3 class="text-white font-bold text-lg">y</h3>
+                        <p class="text-gray-300 text-sm">z</p>
+                    </div>
+                    <div class="bg-black bg-opacity-70 p-4 rounded-lg border border-white/20">
+                        <p class="text-red-400 text-xs font-bold uppercase mb-1">x</p>
+                        <h3 class="text-white font-bold text-lg">y</h3>
+                        <p class="text-gray-300 text-sm">z</p>
+                    </div>
+                    <div class="bg-black bg-opacity-70 p-4 rounded-lg border border-white/20">
+                        <p class="text-red-400 text-xs font-bold uppercase mb-1">x</p>
+                        <h3 class="text-white font-bold text-lg">y</h3>
+                        <p class="text-gray-300 text-sm">z</p>
+                    </div>
+                    <div class="bg-black bg-opacity-70 p-4 rounded-lg border border-white/20">
+                        <p class="text-red-400 text-xs font-bold uppercase mb-1">x</p>
+                        <h3 class="text-white font-bold text-lg">y</h3>
+                        <p class="text-gray-300 text-sm">z</p>
+                    </div>
+                    <div class="bg-black bg-opacity-70 p-4 rounded-lg border border-white/20">
+                        <p class="text-red-400 text-xs font-bold uppercase mb-1">x</p>
+                        <h3 class="text-white font-bold text-lg">y</h3>
+                        <p class="text-gray-300 text-sm">z</p>
+                    </div>
+                    <div class="bg-black bg-opacity-70 p-4 rounded-lg border border-white/20">
+                        <p class="text-red-400 text-xs font-bold uppercase mb-1">x</p>
+                        <h3 class="text-white font-bold text-lg">y</h3>
+                        <p class="text-gray-300 text-sm">z</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Welcome Message -->
+    <header id="home" class="min-h-screen flex items-center justify-center text-center p-6 md:p-10">
+        <div class="glass-card p-8 sm:p-16 rounded-3xl max-w-4xl w-full shadow-2xl animate-fade-in">
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-black text-white uppercase leading-tight tracking-tight drop-shadow-lg">
+                WELCOME TO BLAZE'26
+            </h1>
+            <p class="text-lg sm:text-2xl text-red-300 mt-4 font-light">
+                Unleash the will of fire.
+            </p>
+            <a href="#about" class="mt-8 inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base">
+                Learn Our Story
+            </a>
+        </div>
+    </header>
+
+    <!-- About BLAZE Section -->
+    <section id="about" class="py-10 md:py-20 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white text-center mb-8 md:mb-12 drop-shadow-md border-b-4 border-red-600 pb-2 inline-block mx-auto uppercase">
+                About Blaze
+            </h2>
+            <div class="glass-card p-6 md:p-8 rounded-2xl shadow-2xl mt-8">
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
+                    The National Level Sports Festival of ASMSOC, NMIMS. The Sports
+                    Festival consists of Football, Basketball, and Cricket as their main
+                    sporting events. It unites talent, teamwork and the spirit of
+                    competition of more than 5000+ sports enthusiasts from 50+ colleges.
+                </p>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
+                    Blaze will step into its 8th edition this year and we are ecstatic to
+                    make it an unforgettable experience with your engagement and
+                    cooperation while giving your brand unmatched reach.
+                </p>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+                    We have welcomed colleges from Pune, Haryana, Bangalore, Kolkata,
+                    Delhi, and the surrounding area of Mumbai. We are proud to have
+                    hosted an international team from Babson College in Boston, USA.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-10 md:py-20 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white text-center mb-8 md:mb-12 drop-shadow-md border-b-4 border-red-600 pb-2 inline-block mx-auto uppercase">
+                Past Year Sponsors
+            </h2>
+            <div class="glass-card p-4 sm:p-8 rounded-2xl shadow-2xl mt-8">
+                <!-- Stack images on mobile, auto width -->
+                <div class="space-y-4">
+                    <img src="Sponsors.png" alt="BLAZE'26 Past Year Sponsors List" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="sponsors2.png" alt="BLAZE'26 Past Year Sponsors List" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <p class="text-center text-lg md:text-xl font-bold text-red-300 mt-6">
+                    Partner with us to gain unmatched reach among 5000+ sports enthusiasts across 50+ colleges.
+                </p>
+                <p class="text-center text-base md:text-lg text-gray-300 mt-2">
+                    Contact us to inquire about our premium branding packages.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-10 md:py-20 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white text-center mb-8 md:mb-12 drop-shadow-md border-b-4 border-red-600 pb-2 inline-block mx-auto uppercase">
+                Gallery
+            </h2>
+            <div class="glass-card p-4 sm:p-8 rounded-2xl shadow-2xl mt-8 relative overflow-hidden">
+                <div id="slideshow-container" class="relative w-full aspect-video md:aspect-[16/9] bg-black/20 rounded-lg">
+                    <!-- Slides will be inserted here by JavaScript -->
+                    <!-- Placeholder to ensure layout stability -->
+                    <img src="IMG_4010.jpg" alt="Loading Gallery..." class="w-full h-full object-cover rounded-lg">
+                    
+                    <!-- Prev Button -->
+                    <button id="prev-button" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 sm:p-4 bg-black/50 hover:bg-black/70 rounded-r-lg text-white transition duration-300 focus:outline-none z-20">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+
+                    <!-- Next Button -->
+                    <button id="next-button" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 sm:p-4 bg-black/50 hover:bg-black/70 rounded-l-lg text-white transition duration-300 focus:outline-none z-20">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-xs md:text-sm mt-4">Images change automatically every 4 seconds or use the arrows to navigate.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-70 p-6 mt-10">
+        <div class="max-w-7xl mx-auto text-center text-gray-400 text-sm">
+            <p>&copy; 2026 BLAZE'26 Sports Club. Powered by Student Spirit.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-white transition duration-200">Contact</a>
+                <a href="#" class="hover:text-white transition duration-200">Privacy</a>
+                <a href="#" class="hover:text-white transition duration-200">Socials</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* === Gallery Script === */
+        const imageFiles = [
+            "DSC_0060.jpg", "DSC_0077.jpg", "DSC_0094.jpg", "IMG_4010.jpg",
+            "IMG_4027.jpg", "IMG_7734.jpg", "blaze.jpeg", "blaze2.jpeg",
+            "basketball.jpeg", "cricket.jpeg"
+        ];
+        let currentImageIndex = 0;
+        let slideshowInterval;
+        const container = document.getElementById('slideshow-container');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+
+        function resetInterval() {
+            clearInterval(slideshowInterval);
+            slideshowInterval = setInterval(nextSlide, 3000);
+        }
+
+        function createSlide(src) {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = "BLAZE'26 Event Photo";
+            img.className = 'absolute top-0 left-0 w-full h-full object-cover rounded-lg transition-opacity duration-1000';
+            img.style.opacity = 0;
+            return img;
+        }
+
+        const slides = imageFiles.map(createSlide);
+        slides.forEach(slide => container.appendChild(slide));
+
+        function showSlide(index) {
+            currentImageIndex = (index + slides.length) % slides.length; 
+            slides.forEach((slide, i) => {
+                slide.style.opacity = (i === currentImageIndex) ? 1 : 0;
+                slide.style.zIndex = (i === currentImageIndex) ? 10 : 1;
+            });
+        }
+
+        function nextSlide() { showSlide(currentImageIndex + 1); }
+
+        prevButton.addEventListener('click', () => { showSlide(currentImageIndex - 1); resetInterval(); });
+        nextButton.addEventListener('click', () => { showSlide(currentImageIndex + 1); resetInterval(); });
+
+        if (slides.length > 0) { showSlide(currentImageIndex); resetInterval(); }
+
+        /* === Desktop Contact Dropdown Logic === */
+        const contactBtnDesktop = document.getElementById('contact-toggle-desktop');
+        const contactMenuDesktop = document.getElementById('contact-menu-desktop');
+
+        contactBtnDesktop.addEventListener('click', (e) => {
+            e.stopPropagation();
+            contactMenuDesktop.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!contactMenuDesktop.contains(e.target) && !contactBtnDesktop.contains(e.target)) {
+                contactMenuDesktop.classList.add('hidden');
+            }
+        });
+
+        /* === Mobile Menu Logic === */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const contactToggleMobile = document.getElementById('contact-toggle-mobile');
+        const contactMenuMobile = document.getElementById('contact-menu-mobile');
+
+        // Toggle Mobile Nav
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toggle Contact Section inside Mobile Nav
+        contactToggleMobile.addEventListener('click', () => {
+            contactMenuMobile.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
